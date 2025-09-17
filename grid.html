@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Collage Grid</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Colorful Collage Grid</h1>
+            <p class="subtitle">A responsive grid layout with interactive elements and hover effects</p>
+        </header>
+        
+        <div class="controls">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Nature</button>
+            <button class="filter-btn">Urban</button>
+            <button class="filter-btn">Abstract</button>
+        </div>
+        
+        <div class="collage-grid">
+            <div class="grid-item item-1">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mountain landscape">
+                <div class="item-content">
+                    <h3>Mountain View</h3>
+                    <p>Beautiful mountain landscape at sunrise</p>
+                </div>
+            </div>
+            
+            <div class="grid-item item-2">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Music concert">
+                <div class="item-content">
+                    <h3>Music Festival</h3>
+                    <p>Colorful lights at a night concert</p>
+                </div>
+            </div>
+            
+            <div class="grid-item item-3">
+                <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Urban city">
+                <div class="item-content">
+                    <h3>City Lights</h3>
+                    <p>Urban landscape at night</p>
+                </div>
+            </div>
+            
+            <div class="grid-item item-4">
+                <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hot air balloons">
+                <div class="item-content">
+                    <h3>Hot Air Balloons</h3>
+                    <p>Colorful balloons in the sky</p>
+                </div>
+            </div>
+            
+            <div class="grid-item item-5">
+                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Abstract art">
+                <div class="item-content">
+                    <h3>Abstract Art</h3>
+                    <p>Colorful paint textures</p>
+                </div>
+            </div>
+            
+            <div class="grid-item item-6">
+                <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Forest path">
+                <div class="item-content">
+                    <h3>Forest Path</h3>
+                    <p>Sunlight through trees in a forest</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Created with ❤️ | Colorful Collage Grid Layout © 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple filter button interaction
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // In a real implementation, this would filter the grid items
+                alert('Filtering by: ' + this.textContent);
+            });
+        });
+        
+        // Add click effect to grid items
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+                
+                const title = this.querySelector('h3').textContent;
+                alert('You clicked on: ' + title);
+            });
+        });
+    </script>
+</body>
+</html>
