@@ -1,33 +1,28 @@
-.grid-item:hover {
-    transform: translateY(-5px) scale(2.03);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    z-index: 10;
+.grid-layout{
+    margin: 200px 500px 0px;
+    display: inline-grid;
+    grid-template-rows: repeat (4, 100px);
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-areas: 
+                        "a a a b"
+                         "a a a d"
+                         "e f f f"
+                         "g f f f"
+;
+    gap: 10px; 
+    margin: 0 auto; 
+    justify-content: center;
 }
- .grid-layout {
-     display: inline-grid;
-     grid-template-rows: repeat(4, 100px);
-     grid-template-columns: repeat(5,80px);
-     grid-template-areas: 
-                          "a a b c c"
-                          "d e e e f"
-                          "g e e e h"
-                          "i i j k k";
-     gap: 10px;
-     margin: 0 auto; 
-     justify-content: center;
- }
 
- .grid-item {
-    text-align: center;
-    line-height: 100px;
+.grid-item {
     font-size: 30px;
     text-align: center;
     line-height: 100px;
     position: relative; /* Added for image positioning */
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Style for images inside grid items */
 .grid-item img {
     width: 100%; /* Make image fill the grid item */
     height: 100%; /* Make image fill the grid item */
@@ -38,28 +33,15 @@
     z-index: 1; /* Place image behind the text */
 }
 
- 
- .grid-item:nth-child(1) {
-     grid-area: a;
- }
- 
- .grid-item:nth-child(3) {
-     grid-area: c;
- }
- 
- .grid-item:nth-child(5) {
-     grid-area: e;
- }
- 
- .grid-item:nth-child(9) {
-     grid-area: i;
- }
- 
- .grid-item:nth-child(11) {
-     grid-area: k;
- }
+.grid-item:nth-child(1) {
+    grid-area: a;
+}
 
- .topnav {
+.grid-item:nth-child(5) {
+    grid-area: f;
+}
+
+.topnav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,4 +92,5 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    text-align: center;
 }
