@@ -135,16 +135,17 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgb(191, 191, 191);
-    padding: 12px 0;
+    padding: 15px 0;
     overflow: hidden;
     z-index: 100;
+    -webkit-overflow-scrolling: touch; 
 }
 
 .marquee-content {
     display: flex;
-    width: fit-content;
+    width: max-content; 
     animation: scroll 15s linear infinite;
+    will-change: transform; 
 }
 
 .marquee-content span {
@@ -157,11 +158,11 @@ body {
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
+    0% {
+        transform: translate3d(0, 0, 0);
     }
-    to {
-        transform: translateX(-50%);
+    100% {
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
@@ -171,8 +172,19 @@ body {
         padding: 10px 0;
     }
     
+    .marquee-content {
+        animation: scroll 20s linear infinite; 
+    }
+    
     .marquee-content span {
-        font-size: 1.2em;
+        font-size: 1em; 
         padding-right: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .marquee-content span {
+        font-size: 0.9em;
+        padding-right: 20px;
     }
 }
