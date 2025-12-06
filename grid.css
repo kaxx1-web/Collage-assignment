@@ -32,16 +32,16 @@
     font-size: 30px;
     text-align: center;
     line-height: 100px;
-    position: relative; /* Added for image positioning */
+    position: relative; 
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-item img {
     width: 100%; 
-    height: 100%; /* Make image fill the grid item */
-    object-fit: cover; /* Maintain aspect ratio while covering the area */
-    position: absolute; /* Position absolutely within the grid item */
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
     top: 0;
     left: 0;
     z-index: 1; 
