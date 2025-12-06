@@ -3,19 +3,28 @@
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
     z-index: 10;
 }
- .grid-layout {
-     display: inline-grid;
-     grid-template-rows: repeat(4, 100px);
-     grid-template-columns: repeat(5,80px);
-     grid-template-areas: 
-                          "a a b c c"
-                          "d e e e f"
-                          "g e e e h"
-                          "i i j k k";
-     gap: 10px;
-     margin: 0 auto; 
-     justify-content: center;
- }
+.grid-layout {
+    display: inline-grid;
+    grid-template-rows: repeat(4, 15vw); /* Use viewport width */
+    grid-template-columns: repeat(5, 15vw);
+    grid-template-areas: 
+                         "a a b c c"
+                         "d e e e f"
+                         "g e e e h"
+                         "i i j k k";
+    gap: 2vw;
+    margin: 0 auto;
+    max-width: 90vw; /* Prevents it from getting too large */
+}
+
+/* Cap the size on larger screens */
+@media (min-width: 769px) {
+    .grid-layout {
+        grid-template-rows: repeat(4, 100px);
+        grid-template-columns: repeat(5, 80px);
+        gap: 10px;
+    }
+}
 
  .grid-item {
     text-align: center;
