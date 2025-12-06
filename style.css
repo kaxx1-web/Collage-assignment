@@ -127,6 +127,8 @@ body {
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
+
+
 /* Marquee styles */
 .marquee {
     position: fixed;
@@ -134,14 +136,15 @@ body {
     left: 0;
     width: 100%;
     background: rgb(191, 191, 191);
-    padding: 15px 0;
+    padding: 12px 0;
     overflow: hidden;
     z-index: 100;
 }
 
 .marquee-content {
     display: flex;
-    animation: scroll 20s linear infinite;
+    width: fit-content;
+    animation: scroll 15s linear infinite;
 }
 
 .marquee-content span {
@@ -150,18 +153,26 @@ body {
     font-size: 1.5em;
     font-weight: 700;
     padding-right: 50px;
+    display: inline-block;
 }
 
 @keyframes scroll {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
+    to {
         transform: translateX(-50%);
     }
 }
 
-/* Duplicate the text for seamless loop */
-.marquee-content::after {
-    content: attr(data-text);
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .marquee {
+        padding: 10px 0;
+    }
+    
+    .marquee-content span {
+        font-size: 1.2em;
+        padding-right: 30px;
+    }
 }
