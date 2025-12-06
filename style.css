@@ -166,7 +166,7 @@ body {
     }
 }
 
-/* Mobile adjustments */
+/* Mobile adjustments for proper flow*/
 @media (max-width: 768px) {
     .marquee {
         padding: 10px 0;
