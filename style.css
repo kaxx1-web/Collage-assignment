@@ -127,25 +127,41 @@ body {
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
+/* Marquee styles */
+.marquee {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(191, 191, 191);
+    padding: 15px 0;
+    overflow: hidden;
+    z-index: 100;
+}
 
-/* @media (max-width: 768px) {
-    .topnav {
-        padding: 12px;
+.marquee-content {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.marquee-content span {
+    white-space: nowrap;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-right: 50px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
     }
-    
-    .topnav li {
-        font-size: 1.5em;
+    100% {
+        transform: translateX(-50%);
     }
-    
-    .name {
-        font-size: 1.8em;
-    }
-    
-    .container {
-        padding: 20px;
-    }
-    
-    .grid-container {
-        grid-template-rows: repeat(4, 200px);
-    }
-} */
+}
+
+/* Duplicate the text for seamless loop */
+.marquee-content::after {
+    content: attr(data-text);
+}
